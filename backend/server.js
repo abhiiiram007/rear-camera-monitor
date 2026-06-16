@@ -15,7 +15,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+   origin: "https://rear-camera-monitor.vercel.app",
     methods: ["GET", "POST"],
   },
 });
