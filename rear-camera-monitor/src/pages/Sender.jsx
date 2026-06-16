@@ -25,6 +25,7 @@ function Sender() {
   }, 2000);
 };
 
+
  const requestWakeLock = async () => {
   try {
     if ("wakeLock" in navigator) {
@@ -509,11 +510,16 @@ socket.off("pair-rejected");
             </p>
           )}
 
-         <button
+       <button
   className="secondary-btn"
   onClick={() => {
     disconnectSession();
-    navigate("/");
+
+    navigate("/sender", {
+      replace: true,
+    });
+
+    window.location.reload();
   }}
 >
   Back
