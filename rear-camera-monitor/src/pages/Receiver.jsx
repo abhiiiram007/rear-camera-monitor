@@ -297,12 +297,7 @@ console.log("Remote Description Set");
 
       console.log("Answer Sent");
     });
-    socket.on(
-  "orientation-change",
-  (angle) => {
-    setRotation(angle);
-  }
-);
+    
 
     socket.on(
       "ice-candidate",

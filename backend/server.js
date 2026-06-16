@@ -5,13 +5,18 @@ const cors = require("cors");
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("Backend running");
+});
 app.use(cors());
 
 const server = http.createServer(app);
 
+
 const io = new Server(server, {
   cors: {
     origin: "*",
+    methods: ["GET", "POST"],
   },
 });
 
@@ -96,6 +101,10 @@ socket.on(
   });
 });
 
-server.listen(5000, () => {
-  console.log("Server running on port 5000");
+const PORT = process.env.PORT || 5000;
+
+server.listen(PORT, () => {
+  console.log(
+    `Server running on port ${PORT}`
+  );
 });
