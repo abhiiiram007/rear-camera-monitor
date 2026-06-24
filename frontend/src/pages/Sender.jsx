@@ -527,33 +527,6 @@ socket.off("pair-rejected");
 
 
 
-          <button
-            onClick={() => {
-              const room =
-                prompt(
-                  "Enter Room ID"
-                );
-
-              if (!room) return;
-
-              setRoomId(room);
-
-              roomRef.current =
-                room;
-
-              socket.emit(
-                "join-room",
-                room
-              );
-
-              socket.emit(
-                "pair-request",
-                room
-              );
-            }}
-          >
-            Join Room Manually
-          </button>
         </div>
       </div>
       {toast && (
